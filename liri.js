@@ -1,10 +1,12 @@
+require("dotenv").config();
 //storing recieved info from api keys into variables
 var keys = require("./keys.js");
 var Twitter = require("twitter");
-var Spotify = require("spotify");
+var Spotify = require("node-spotify-api");
+var request = require("request");
 
 // read and write files
-var fs = require('fs');
+var fs = require("fs");
 
 //setting parameters
 var command = process.argv[2];
