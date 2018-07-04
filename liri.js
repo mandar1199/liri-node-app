@@ -21,17 +21,18 @@ function myTweets() {
 	});
 
 	//twitter api parameters
-	var parameters = {
+	var params = {
 		screen_name: 'amanda',
 		count: 20
 	};
 
 	//get method for last 20 tweets from twitter account
-	client.get('statuses/user_timeline', params, function(error, tweets, response) {
-		if(error) {
-			console.log('Error occurred: ' + error);
-		} else { 
-	  	console.log("My Tweets");
-	  	console.log("");
-    )};
-};
+	client.get('statuses/user_timeline', params, function(error, tweets, response){
+        if(!error) {
+            console.log("Error" + error);
+        }else{
+            console.log("Tweets" + tweets);
+        }
+    });
+    
+}
