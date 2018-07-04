@@ -1,7 +1,7 @@
 //storing recieved info from api keys into variables
 var keys = require("./keys.js");
-var twitter = require("twitter");
-var spotify = require("spotify");
+var Twitter = require("twitter");
+var Spotify = require("spotify");
 
 // read and write files
 var fs = require('fs');
@@ -11,7 +11,7 @@ var command = process.argv[2];
 var query = process.argv[3];
 
 //functions for app commands
-var myTweets = function() {
+function myTweets() {
     //new variable for twitter exports of keys.js file
 	var client = new Twitter({
 		consumer_key: twitterCredentials.consumer_key,
@@ -21,7 +21,7 @@ var myTweets = function() {
 	});
 
 	//twitter api parameters
-	var params = {
+	var parameters = {
 		screen_name: 'amanda',
 		count: 20
 	};
@@ -31,14 +31,7 @@ var myTweets = function() {
 		if(error) {
 			console.log('Error occurred: ' + error);
 		} else { 
-	  	console.log("My 20 Most Recent Tweets");
+	  	console.log("My Tweets");
 	  	console.log("");
-
-	  	for(var i = 0; i < tweets.length; i++) {
-	  		console.log("( #" + (i + 1) + " )  " + tweets[i].text);
-	  		console.log("Created:  " + tweets[i].created_at);
-	  		console.log("");
-	  	}
-	  }
-	});
-}
+    )};
+};
